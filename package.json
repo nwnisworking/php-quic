@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@fails-components/webtransport": "^0.3.1",
+    "ilog": "^1.2.3",
+    "quic": "^0.4.2",
+    "thunks": "^4.9.6"
+  }
+}

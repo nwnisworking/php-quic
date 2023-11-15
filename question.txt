@@ -1,0 +1,24 @@
+Hello guys,
+
+I am currently building a WebTransport socket which follows the RFC9000/RFC9001 directive and I stumbled upon an issue where I can't decrypt the payload. This is going to be a long post. To get started, this is how initial packet looks like.
+```
+Initial Packet{
+Header Form - 1 bit = 1
+Fixed Bit - 1 bit = 1
+Packet Type - 2 bits = 0
+Reserved Bits - 2 bits,
+Packet Number Length - 2 bit,
+Version - 4 byte,
+Destination Connection ID Length - 1 byte = 8
+Destination Connection ID - 8 byte (Size is based on Destination Connection ID Length)
+Source Connection ID Length - 1 Byte = 0,
+Source Connection ID Length - 0 Byte (Size is based on Source Connection ID Length),
+Token Length - 1 Byte = 0,
+Token - 0 Byte (Size is based on Token Length)
+Length - 2 Byte 
+Packet Number - ??? (Mask[1, 4] ^ 4 byte after Length)
+Packey Payload - ???  
+}
+```
+
+The way it works, we will need to create the client 
